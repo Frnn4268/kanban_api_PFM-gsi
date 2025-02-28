@@ -1,0 +1,110 @@
+{
+  "info": {
+    "name": "Kanban API - GSI",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Get All Tasks",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8000/tasks/",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8000",
+          "path": ["tasks"]
+        }
+      }
+    },
+    {
+      "name": "Get Task by ID",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8000/tasks/1",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8000",
+          "path": ["tasks", "1"]
+        }
+      }
+    },
+    {
+      "name": "Create New Task",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"title\": \"New Task\", \"description\": \"Task description\", \"status\": \"todo\", \"priority\": \"low\", \"due_date\": \"2025-03-01T00:00:00Z\", \"assignee_id\": 1, \"tags\": [\"backend\", \"urgent\"], \"comments\": [\"Initial comment\"], \"created_by\": 1, \"is_archived\": false}"
+        },
+        "url": {
+          "raw": "http://localhost:8000/tasks/",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8000",
+          "path": ["tasks"]
+        }
+      }
+    },
+    {
+      "name": "Update Task",
+      "request": {
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"title\": \"Updated Task\", \"description\": \"Updated task description\", \"status\": \"in_progress\", \"priority\": \"high\", \"due_date\": \"2025-03-10T00:00:00Z\", \"assignee_id\": 2, \"tags\": [\"updated\", \"review\"], \"comments\": [\"Updated comment\"], \"created_by\": 1, \"is_archived\": false}"
+        },
+        "url": {
+          "raw": "http://localhost:8000/tasks/1",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8000",
+          "path": ["tasks", "1"]
+        }
+      }
+    },
+    {
+      "name": "Delete Task",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8000/tasks/1",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8000",
+          "path": ["tasks", "1"]
+        }
+      }
+    },
+    {
+      "name": "Get Tasks for Kanban",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8000/tasks/kanban/all",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8000",
+          "path": ["tasks", "kanban", "all"]
+        }
+      }
+    }
+  ]
+}
