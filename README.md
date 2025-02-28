@@ -2,7 +2,7 @@
 
 ## Overview
 
-This project is a Kanban Task Management API built with FastAPI, Odmantic, and MongoDB. It provides CRUD operations for managing tasks and utilizes MongoDB's flexible document model for scalability and ease of use, while Odmantic ensures a seamless integration with FastAPI for efficient asynchronous operations.
+This project is a Kanban Task Management API built with FastAPI, Odmantic, and MongoDB. It provides CRUD operations for managing tasks and follows a structured architecture to ensure scalability and maintainability.
 
 ## Features
 
