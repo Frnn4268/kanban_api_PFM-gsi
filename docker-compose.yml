@@ -1,0 +1,39 @@
+version: '3.8'
+
+services:
+# Service to run the FastAPI application
+  api-fastapi:
+    image: api-fastapi
+    build:
+      context: .
+      dockerfile: Dockerfile
+    depends_on:
+      - mongo # Ensures the FastAPI app starts after the database is up
+    environment:
+      - MONGO_URL=mongodb://mongo:27017
+    ports:
+      - "8000:8000"
+    networks:
+      - backend
+    restart: unless-stopped
+    command: uvicorn app.main:app --host 0.0.0.0 --port 8000
+
+  # Service to run MongoDB database
+  mongo:
+    image: bitnami/mongodb:latest
+    container_name: mongodb
+    restart: always
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongodata:/data/db
+    networks:
+      - backend
+
+# Networks section
+networks:
+  backend: # Defines the backend network for the services to communicate
+
+# Volumes section
+volumes:
+  mongodata: # Defines a named volume for persisting MongoDB data
