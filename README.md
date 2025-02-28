@@ -87,6 +87,13 @@ Ensure you have the following installed:
 	```bash
 	http://localhost:8000
 	```
+
+4. Stop the application:
+
+	```bash
+	docker-compose down
+	```
+
 ### Running the Application with Makefile
 
 To run the application using the ***Makefile***, you can use the following commands:
