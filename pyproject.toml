@@ -1,0 +1,17 @@
+[tool.poetry]
+name = "Kanban API - GSI"
+version = "0.1.0"
+description = "CRUD using Python, FastAPI, MongoDB and Docker"
+authors = ["frnn4268 - <frnnmartinez4268@gmail.com>"]
+
+[tool.poetry.dependencies]
+python = "^3.12"
+fastapi = "^0.115.8"
+uvicorn = "^0.34.0"
+motor = "^3.2.0"        
+odmantic = "^1.0.2" 
+pydantic = "^2.10.6"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
