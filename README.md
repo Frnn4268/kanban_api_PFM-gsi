@@ -154,7 +154,8 @@ To run the application using the ***Makefile***, you can use the following comma
 
 To test the API, you can use:
 
-- Postman: Import ***postman_collection.json***
+- Postman: Import ***postman_collection.json***.
+	(Collection attached to this project.)
 
 ## Contributors
 
